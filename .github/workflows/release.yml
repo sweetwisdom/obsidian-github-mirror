@@ -15,21 +15,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate tag matches manifest
+      - name: Get version
+        id: manifest
         run: |
-          TAG="${GITHUB_REF#refs/tags/v}"
           VERSION=$(jq -r .version manifest.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-          if [ "$TAG" != "$VERSION" ]; then
-            echo "Tag ($TAG) does not match manifest version ($VERSION)"
-            exit 1
-          fi
-
-      - name: Create release
+      - name: Check if release exists
+        id: check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          VERSION=$(jq -r .version manifest.json)
+          if gh release view "v${{ steps.manifest.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create release
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=${{ steps.manifest.outputs.version }}
 
           gh release create "v$VERSION" \
             --title="v$VERSION" \
