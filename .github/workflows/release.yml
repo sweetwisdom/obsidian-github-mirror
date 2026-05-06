@@ -2,8 +2,8 @@ name: Release Obsidian Plugin
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 permissions:
   contents: write
