@@ -2,7 +2,7 @@
   "id": "obsidian-fast",
   "name": "Obsidian Fast",
   "description": "为 Obsidian 加速访问github",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "sweetwisdom",
   "authorUrl": "https://github.com/sweetwisdom/",
   "isDesktopOnly": true,

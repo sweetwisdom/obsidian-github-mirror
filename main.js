@@ -4,9 +4,7 @@ const { Plugin, PluginSettingTab, Setting } = require('obsidian')
 
 const PROXY_LIST = [
   { name: 'ghproxy1', url: 'gh-proxy.com/https://github.com' },
-  { name: 'kkgithub', url: 'kkgithub.com' },
   { name: 'ghproxy2', url: 'ghproxy.cc/https://github.com' },
-   { name: 'ghp', url: 'ghp.966338.xyz/https://github.com' },
   { name: 'ghproxy3', url: 'ghproxy.cn/https://github.com' },
   { name: 'ghproxy4', url: 'www.ghproxy.cn/https://github.com' },
   { name: 'site', url: 'github.site' },

@@ -3,13 +3,22 @@
 ## 介绍
 为 Obsidian 的 GitHub 访问设置镜像
 
-## 开始
+## 📦 安装
 
-1. 下载本仓库
-2. 复制到 Obsidian 仓库的 `.obsidian/plugins` 目录
-3. 进入 设置 > 第三方插件，关闭安全模式
-4. 在已安装插件中找到 `Github Mirror` 并启用
-5. 完成！
+### 通过 BRAT 插件安装（推荐）
+1. 在 Obsidian 社区插件中搜索并安装 [BRAT](https://github.com/TfTHacker/obsidian42-brat) 插件
+2. 打开 BRAT 设置，点击 **Add beta plugin**
+3. 粘贴仓库链接：`https://github.com/sweetwisdom/obsidian-github-mirror`
+4. 可选择安装版本，点击确认即可自动安装
+5. 在 Obsidian 设置中启用插件
+
+### 手动安装
+1. 前往 [Releases](https://github.com/sweetwisdom/obsidian-github-mirror/releases) 下载最新版本的 `zip` 文件
+2. 将文件解压到你的 Obsidian 仓库 `<vault>/.obsidian/plugins/` 目录下
+3. 重新加载 Obsidian
+4. 在设置中启用插件
+
+
 
 ### 配置
 
